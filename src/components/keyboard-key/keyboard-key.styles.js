@@ -19,7 +19,7 @@ const KeyboardKeyContainer = styled.div`
     transform: scale(1.1);
   }
 
-  &.space-key {
+  &.space {
     width: 30rem;
   }
 
