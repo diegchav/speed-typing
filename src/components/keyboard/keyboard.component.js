@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import KeyboardRow from '../keyboard-row/keyboard-row.component';
 
-import { pressKey } from '../../redux/keyboard/keyboard.actions';
+import { pressKey } from '../../redux/typing/typing.actions';
 
 import KEYBOARD_DATA from './keyboard.data';
 

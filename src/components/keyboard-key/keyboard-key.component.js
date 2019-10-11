@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import { selectPressedKey } from '../../redux/keyboard/keyboard.selectors';
+import { selectPressedKey } from '../../redux/typing/typing.selectors';
 
 import KeyboardKeyContainer from './keyboard-key.styles';
 

@@ -1,12 +1,12 @@
-import KeyboardActionTypes from './keyboard.types';
+import TypingActionTypes from './typing.types';
 
 const INITIAL_STATE = {
   pressedKey: null
 };
 
-const keyboardReducer = (state = INITIAL_STATE, action) => {
+const TypingReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case KeyboardActionTypes.PRESS_KEY:
+    case TypingActionTypes.PRESS_KEY:
       return {
         ...state,
         pressedKey: action.payload
@@ -16,4 +16,4 @@ const keyboardReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default keyboardReducer;
+export default TypingReducer;

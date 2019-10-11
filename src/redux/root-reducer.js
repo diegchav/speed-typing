@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import keyboardReducer from './keyboard/keyboard.reducer';
+import TypingReducer from './typing/typing.reducer';
 
 const rootReducer = combineReducers({
-  keyboard: keyboardReducer
+  typing: TypingReducer
 });
 
 export default rootReducer;
