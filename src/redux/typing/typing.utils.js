@@ -7,11 +7,13 @@ export const checkLetter = (state, letter) => {
   const textLen = text.length;
   if (textIndex < textLen && text[textIndex] === letter) {
     return {
-      textIndex: textIndex + 1
+      textIndex: textIndex + 1,
+      isWrong: false
     };
   }
 
   return {
-    textIndex
+    textIndex,
+    isWrong: true
   };
 };

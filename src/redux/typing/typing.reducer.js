@@ -5,7 +5,8 @@ import { checkLetter } from './typing.utils';
 const INITIAL_STATE = {
   pressedKey: '',
   text: 'This is some sample text to practice your typing speed.'.split(''),
-  textIndex: 0
+  textIndex: 0,
+  isWrong: false
 };
 
 const TypingReducer = (state = INITIAL_STATE, action) => {
