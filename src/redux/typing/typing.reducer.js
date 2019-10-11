@@ -1,7 +1,9 @@
 import TypingActionTypes from './typing.types';
 
 const INITIAL_STATE = {
-  pressedKey: null
+  pressedKey: null,
+  text: 'This is some sample text to practice your typing speed.'.split(''),
+  textIndex: 0
 };
 
 const TypingReducer = (state = INITIAL_STATE, action) => {

@@ -1,13 +1,26 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+
+import { selectText } from '../../redux/typing/typing.selectors';
 
 import InputTextContainer from './input-text.styles';
 
-const InputText = () => (
+const InputText = ({ text }) => (
   <InputTextContainer>
     <div className="text">
-      This is some sample text to practice your typing speed.
+      {
+        text.map((letter, i) => {
+          return <span key={i}>{letter}</span>
+        })
+      }
+
     </div>
   </InputTextContainer>
 );
 
-export default InputText;
+const mapStateToProps = createStructuredSelector({
+  text: selectText
+});
+
+export default connect(mapStateToProps)(InputText);
