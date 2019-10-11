@@ -11,3 +11,8 @@ export const selectText = createSelector(
   [selectTyping],
   typing => typing.text
 );
+
+export const selectTextIndex = createSelector(
+  [selectTyping],
+  typing => typing.textIndex
+);

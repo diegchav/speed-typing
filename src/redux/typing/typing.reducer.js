@@ -1,5 +1,7 @@
 import TypingActionTypes from './typing.types';
 
+import { checkLetter } from './typing.utils';
+
 const INITIAL_STATE = {
   pressedKey: '',
   text: 'This is some sample text to practice your typing speed.'.split(''),
@@ -11,7 +13,8 @@ const TypingReducer = (state = INITIAL_STATE, action) => {
     case TypingActionTypes.PRESS_KEY:
       return {
         ...state,
-        pressedKey: action.payload
+        pressedKey: action.payload,
+        ...checkLetter(state, action.payload)
       };
     case TypingActionTypes.UNPRESS_KEY:
       return {
