@@ -3,16 +3,16 @@ import { connect } from 'react-redux';
 
 import KeyboardRow from '../keyboard-row/keyboard-row.component';
 
-import { pressKey } from '../../redux/typing/typing.actions';
+import { pressKey, unpressKey } from '../../redux/typing/typing.actions';
 
 import KEYBOARD_DATA from './keyboard.data';
 
 import KeyboardContainer from './keyboard.styles';
 
 
-const Keyboard = ({ pressKey }) => {
+const Keyboard = ({ pressKey, unpressKey }) => {
   useEffect(() => {
-    const handleKeyUp = e => pressKey('');
+    const handleKeyUp = e => unpressKey();
     const handleKeyDown = e => pressKey(e.key);
 
     window.addEventListener('keyup', handleKeyUp);
@@ -22,7 +22,7 @@ const Keyboard = ({ pressKey }) => {
       window.removeEventListener('keyup', handleKeyUp);
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [pressKey]);
+  }, [pressKey, unpressKey]);
 
   return (
     <KeyboardContainer>
@@ -34,7 +34,8 @@ const Keyboard = ({ pressKey }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  pressKey: key => dispatch(pressKey(key))
+  pressKey: key => dispatch(pressKey(key)),
+  unpressKey: () => dispatch(unpressKey())
 });
 
 export default connect(null, mapDispatchToProps)(Keyboard);
