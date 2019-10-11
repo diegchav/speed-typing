@@ -8,25 +8,29 @@ import { selectPressedKey } from '../../redux/keyboard/keyboard.selectors';
 
 import KeyboardKeyContainer from './keyboard-key.styles';
 
-const KeyboardKey = ({ value, space, pressedKey }) => {
+const KeyboardKey = ({ values, size, pressedKey }) => {
   const classes = classNames({
-    'space': space,
-    'pressed': pressedKey && (value === pressedKey.toUpperCase())
+    'pressed': pressedKey && (values.includes(pressedKey.toUpperCase()))
 
   });
   return (
-    <KeyboardKeyContainer className={classes}>
-      <span>{value}</span>
+    <KeyboardKeyContainer className={classes} size={size}>
+      <span>{values[0]}</span>
+      {
+        values.length === 2
+        ? <span>{values[1]}</span>
+        : null
+      }
     </KeyboardKeyContainer>
   )
 };
 
 KeyboardKey.defaultProps = {
-  space: false
+  size: 1
 };
 
 KeyboardKey.propTypes = {
-  value: PropTypes.string.isRequired
+  values: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 const mapStateToProps = createStructuredSelector({

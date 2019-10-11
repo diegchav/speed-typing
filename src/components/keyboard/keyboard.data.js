@@ -1,40 +1,63 @@
 const KEYBOARD_DATA = {
   rows: [
     [
-      { value: 'Q' },
-      { value: 'W' },
-      { value: 'E' },
-      { value: 'R' },
-      { value: 'T' },
-      { value: 'Y' },
-      { value: 'U' },
-      { value: 'I' },
-      { value: 'O' },
-      { value: 'P' }
+      { values: ['~', '`'] },
+      { values: ['!', '1'] },
+      { values: ['@', '2'] },
+      { values: ['#', '3'] },
+      { values: ['$', '4'] },
+      { values: ['%', '5'] },
+      { values: ['^', '6'] },
+      { values: ['&', '7'] },
+      { values: ['*', '8'] },
+      { values: ['(', '9'] },
+      { values: [')', '0'] },
+      { values: ['-', '_'] },
+      { values: ['+', '='] }
     ],
     [
-      { value: 'A' },
-      { value: 'S' },
-      { value: 'D' },
-      { value: 'F' },
-      { value: 'G' },
-      { value: 'H' },
-      { value: 'J' },
-      { value: 'K' },
-      { value: 'L' }
+      { values: ['Q'] },
+      { values: ['W'] },
+      { values: ['E'] },
+      { values: ['R'] },
+      { values: ['T'] },
+      { values: ['Y'] },
+      { values: ['U'] },
+      { values: ['I'] },
+      { values: ['O'] },
+      { values: ['P'] },
+      { values: ['{', '['] },
+      { values: ['}', ']'] },
+      { values: ['|', '\\'] }
     ],
     [
-      { value: 'Z' },
-      { value: 'X' },
-      { value: 'C' },
-      { value: 'V' },
-      { value: 'B' },
-      { value: 'N' },
-      { value: 'M' }
+      { values: ['A'] },
+      { values: ['S'] },
+      { values: ['D'] },
+      { values: ['F'] },
+      { values: ['G'] },
+      { values: ['H'] },
+      { values: ['J'] },
+      { values: ['K'] },
+      { values: ['L'] },
+      { values: [':', ';'] },
+      { values: ['"', '\''] }
+    ],
+    [
+      { values: ['Z'] },
+      { values: ['X'] },
+      { values: ['C'] },
+      { values: ['V'] },
+      { values: ['B'] },
+      { values: ['N'] },
+      { values: ['M'] },
+      { values: ['<', ','] },
+      { values: ['>', '.'] },
+      { values: ['?', '/'] }
     ],[
       {
-        value: '',
-        space: true
+        values: [' '],
+        size: 5
       }
     ]
   ]

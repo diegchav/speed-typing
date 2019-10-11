@@ -5,9 +5,10 @@ const KeyboardKeyContainer = styled.div`
   padding: 2rem;
   border: 1px solid #4f9a94;
   border-radius: 3px;
-  width: 6rem;
+  width: ${({ size }) => `${6 * size}rem`};
   height: 6rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -17,10 +18,6 @@ const KeyboardKeyContainer = styled.div`
   &:hover,
   &.pressed {
     transform: scale(1.1);
-  }
-
-  &.space {
-    width: 30rem;
   }
 
   span {

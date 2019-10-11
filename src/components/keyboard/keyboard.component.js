@@ -11,16 +11,10 @@ import KeyboardContainer from './keyboard.styles';
 
 
 const Keyboard = ({ pressKey }) => {
-  const handleKeyUp = e => {
-    pressKey('');
-  };
-
-  const handleKeyDown = e => {
-    const key = e.key;
-    pressKey(key);
-  };
-
   useEffect(() => {
+    const handleKeyUp = e => pressKey('');
+    const handleKeyDown = e => pressKey(e.key);
+
     window.addEventListener('keyup', handleKeyUp);
     window.addEventListener('keydown', handleKeyDown);
 
@@ -28,7 +22,7 @@ const Keyboard = ({ pressKey }) => {
       window.removeEventListener('keyup', handleKeyUp);
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [pressKey]);
 
   return (
     <KeyboardContainer>
